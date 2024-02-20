@@ -7,19 +7,114 @@
     <link rel="stylesheet" href="public/css/app.css" />
   </head>
   <body>
+    <header>
+      <p>Artista</p>
+      <ul>
+        <li></li>
+      </ul>
+    </header>
+    <aside id="">
+      <img
+        id="background"
+        src="public/assets/images/backgroundImage.svg"
+        alt=""
+      />
+      <img
+        id="backClip"
+        src="public/assets/images/contato-outline.svg"
+        alt=""
+      />
+      <div>
+        <div><p>Contato Profissional</p></div>
+        <p>98 991234-5678</p>
+        <p>contato@artista.com.br</p>
+      </div>
+    </aside>
     <section>
-      <form action="">
+      <form action="" method="post">
         <div>
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" />
+          <label for="contactFor">Seu contato é relacionado a:</label>
+          <select name="contactFor" id="contactFor">
+            <option value="Imprensa">Imprensa</option>
+            <option value="Publicidade">Publicidade</option>
+            <option value="Design">Design</option>
+            <option value="Programação">Programação</option>
+          </select>
         </div>
         <div>
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
+          <label for="name">Nome</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            minlength="4"
+            maxlength="8"
+            placeholder="Nome"
+          />
         </div>
-        <button>Submit</button>
+        <div>
+          <label for="enterprise">Empresa</label>
+          <input
+            type="text"
+            name="enterprise"
+            id="enterprise"
+            required
+            minlength="4"
+            maxlength="8"
+            placeholder="Empresa"
+          />
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            name="e-mail"
+            id="e-mail"
+            required
+            minlength="4"
+            maxlength="8"
+            placeholder="E-mail"
+          />
+        </div>
+        <div>
+          <label for="phone">Telefone</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            required
+            minlength="4"
+            maxlength="8"
+            placeholder="Telefone"
+          />
+        </div>
+        <div>
+          <textarea
+            name=""
+            id=""
+            required
+            cols="30"
+            rows="10"
+            placeholder="Digite aqui..."
+          >
+            Mensagem
+        </textarea>
+        </div>
+        <div>
+          <div>
+            <label for="notRobot">
+              <input type="checkbox" name="notRobot" id="notRobot" />
+              Não sou um robô
+            </label>
+          </div>
+          <button>Enviar</button>
+        </div>
       </form>
-      <script src="script.js"></script>
+      <footer>
+        <p>2023 &copy ARTISTA. Todos os direitos reservados.</p>
+      </footer>
+      <script src="public/script/script.js"></script>
     </section>
   </body>
 </html>

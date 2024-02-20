@@ -19,7 +19,7 @@ COPY . /usr/share/nginx/html
 WORKDIR /usr/share/nginx/html
 
 # Compila os arquivos Stylus
-RUN stylus --prefix style- src/styles/app.styl --out public/css
+RUN stylus -w src/styles/app.styl --out public/css
 
 # Expor a porta 80 para o Nginx
 EXPOSE 80
