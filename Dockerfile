@@ -3,7 +3,7 @@ FROM nginx:alpine
 # Atualiza o índice do apk e instala Node.js e npm
 RUN apk update && apk add --no-cache nodejs npm
 
-# Copia o arquivo package.json e package-lock.json (ou npm-shrinkwrap.json se existir)
+# Copia o arquivo package.json e package-lock.json
 COPY package*.json ./
 
 # Limpa o cache do npm e instala as dependências do projeto

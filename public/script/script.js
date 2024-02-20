@@ -7,7 +7,3 @@ form.addEventListener("submit", (e) => {
   console.log("enviando");
 
 });
-
-name.addEventListener("submit", (e) => {
-  
-})
