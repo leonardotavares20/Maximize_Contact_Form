@@ -1,15 +1,15 @@
-# Contact Form for Maximize
+# ThayOG for Maximize
 
-## Instruções para utilizar o projeto via docker
+## Commands to utilize the project with Docker
 
-Para utilizar esse projeto via docker você precisa ter o docker instalado e também o git.
+To use this project with docker, you need to instal Docker and Git
 
--  Este projeto utiliza docker na versão 24.0.7
--  Você pode clonar o repositorio com: 'git clone https://github.com/leonardotavares20/ThayOG-Maximize.git'
--  Após clonar o repositorio, utilize o comando "cd ./ThayOG-Maximize no terminal" para mudar o diretorio para o do projeto,
--  Inicie o docker em sua maquina
--  Digite no terminal(pode ser do seu editor de texto ou terminal do sistema) o comando: "docker build -t thayog-maximize ."
--  E inicie o projeto com o comando: "docker run --name thayog-maximize -it -p 8080:80 -d thayog-maximize",
--  Após isso acesse o projeto na url do seu navegador digitando na barra superior: localhost:8080, após seguir esses passos o projeto vai iniciar no seu navegador
-- Para parar a execução digite o comando: 'docker stop thayog-maximize'
-- Para reiniciar a execução do container digite: 'docker start thayog-maximize'
+-  Version docker: 24.0.7
+-  You can clone the repo: 'git clone https://github.com/leonardotavares20/ThayOG-Maximize.git'
+-  After clone the repo, use "cd ./ThayOG-Maximize" in terminal to change the directory for the project,
+-  Start docker in your pc
+-  Type in terminal: "docker build -t thayog-maximize ."
+-  Start the container: "docker run --name thayog-maximize -it -p 8080:80 -d thayog-maximize",
+-  After acess the project at the port: localhost:8080
+- To stop the container: 'docker stop thayog-maximize'
+- To restart execution: 'docker start thayog-maximize'
