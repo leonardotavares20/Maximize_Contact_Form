@@ -1,0 +1,53 @@
+
+.aside-contact
+    display grid
+    position: relative
+    font-family: PoppinsLight
+    gap: 3rem
+    justify-content: center
+    padding-bottom: 3rem 
+
+    &__aside-images 
+        display grid
+
+    &__image-main
+        z-index 1
+
+    &__image-contact
+        position: absolute;
+        transform: translate(-20%, 43%)
+
+    &__one
+        z-index: 2
+
+    &__two
+        z-index: 0
+
+    //Contact info
+
+    &__contact-info 
+        display: grid
+        justify-content: center
+        gap: 1rem
+        height: 3.8rem
+        border-left: 2px solid $Geraldine
+        padding-left: 1.5rem
+
+    &__professional
+            letter-spacing: .4rem
+            font-weight: 700
+            color: $text-gray
+            text-transform: uppercase
+
+    &__info
+        display: flex
+        gap: 0rem 3rem
+
+    &__telephone
+        font-family: PoppinsBold  
+        color: $IronsideGrey
+    
+    &__telephone, &__email
+        display: flex
+        align-items: center
+        gap: 0rem .7rem

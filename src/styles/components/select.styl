@@ -1,0 +1,51 @@
+
+.form-contact
+
+     &__select-field
+        height: 100%
+        border: none
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        gap: 0.5rem
+
+     &__select-label
+        font-family: PoppinsLight
+        font-size: 1.1rem
+
+    &__select-container
+        position: relative;
+        width: 90%
+        font-family: PoppinsLight
+        
+    &__select-arrow
+        position: absolute;
+        right: 5%;
+        top: 35%;
+        width: 1rem;
+        height: 1rem;
+        pointer-events: none;
+    
+    &__select:focus, &__select:hover
+            outline: none;
+            border-color: $LightRed
+
+    &__select
+        -webkit-appearance: none;
+        height: 3.5rem
+        width: 100%;
+        color: $Black
+        border: 1px solid $Cloud
+        border-radius: 5px;
+        padding-left: 1.2rem
+        background: white;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        transition: all 150ms ease; 
+    
+    &__option
+        color: $Black
+
+    &__option[value=""][disabled] 
+        display: none;

@@ -5,116 +5,353 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato - ThayOG</title>
     <link rel="stylesheet" href="public/css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <body>
-    <header>
+    <header class="header-contact">
       <p>Artista</p>
-      <ul>
-        <li></li>
-      </ul>
     </header>
-    <aside id="">
-      <img
-        id="background"
-        src="public/assets/images/backgroundImage.svg"
-        alt=""
-      />
-      <img
-        id="backClip"
-        src="public/assets/images/contato-outline.svg"
-        alt=""
-      />
-      <div>
-        <div><p>Contato Profissional</p></div>
-        <p>98 991234-5678</p>
-        <p>contato@artista.com.br</p>
-      </div>
-    </aside>
-    <section>
-      <form action="" method="post">
-        <div>
-          <label for="contactFor">Seu contato é relacionado a:</label>
-          <select name="contactFor" id="contactFor">
-            <option value="Imprensa">Imprensa</option>
-            <option value="Publicidade">Publicidade</option>
-            <option value="Design">Design</option>
-            <option value="Programação">Programação</option>
-          </select>
-        </div>
-        <div>
-          <label for="name">Nome</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            required
-            minlength="4"
-            maxlength="8"
-            placeholder="Nome"
+    <main>
+      <aside class="aside-contact">
+        <div class="aside-contact__aside-images">
+          <img
+            class="aside-contact__image-main"
+            src="public/assets/images/contato-imagem.svg"
+            alt="Mulher com uma camisa amarela sorrindo, segurando alguns pincéis em sua mão esquerda, e uma aquarela cobrindo metade do seu rosto"
+          />
+          <img
+            aria-hidden="true"
+            class="aside-contact__image-contact aside-contact__one"
+            src="public/assets/images/contato-outline.svg"
+            alt="Contato"
+          />
+          <img
+            aria-label="Entre em contato conosco!"
+            class="aside-contact__image-contact aside-contact__two"
+            src="public/assets/images/contato.svg"
+            alt="Contato"
           />
         </div>
-        <div>
-          <label for="enterprise">Empresa</label>
-          <input
-            type="text"
-            name="enterprise"
-            id="enterprise"
-            required
-            minlength="4"
-            maxlength="8"
-            placeholder="Empresa"
-          />
-        </div>
-        <div>
-          <label for="email">E-mail</label>
-          <input
-            type="text"
-            name="e-mail"
-            id="e-mail"
-            required
-            minlength="4"
-            maxlength="8"
-            placeholder="E-mail"
-          />
-        </div>
-        <div>
-          <label for="phone">Telefone</label>
-          <input
-            type="text"
-            name="phone"
-            id="phone"
-            required
-            minlength="4"
-            maxlength="8"
-            placeholder="Telefone"
-          />
-        </div>
-        <div>
-          <textarea
-            name=""
-            id=""
-            required
-            cols="30"
-            rows="10"
-            placeholder="Digite aqui..."
-          >
-            Mensagem
-        </textarea>
-        </div>
-        <div>
-          <div>
-            <label for="notRobot">
-              <input type="checkbox" name="notRobot" id="notRobot" />
-              Não sou um robô
-            </label>
+        <div class="aside-contact__contact-info">
+          <div class="aside-contact__professional">
+            <p>Contato Profissional</p>
           </div>
-          <button>Enviar</button>
+          <div class="aside-contact__info">
+            <div class="aside-contact__telephone">
+              <img
+                src="public/assets/images/icon-telefone.svg"
+                alt="Número de telefone"
+              />
+              <p class="aside-contact__telephone-text">98 991234-5678</p>
+            </div>
+            <div class="aside-contact__email">
+              <img
+                src="public/assets/images/icon-email.svg"
+                alt="E-mail para contato"
+              />
+              <p class="aside-contact__email-text">contato@artista.com.br</p>
+            </div>
+          </div>
         </div>
-      </form>
-      <footer>
-        <p>2023 &copy ARTISTA. Todos os direitos reservados.</p>
-      </footer>
-      <script src="public/script/script.js"></script>
-    </section>
+      </aside>
+      <section class="section-contact">
+        <form class="form-contact" action="" method="post">
+          <fieldset class="form-contact__select-field">
+            <label class="form-contact__select-label" for="contactFor"
+              >Seu contato é relacionado a:</label
+            >
+            <div class="form-contact__select-container">
+              <select
+                class="form-contact__select"
+                name="contactFor"
+                id="contactFor"
+                required
+              >
+                <option class="form-contact__option" value="" disabled selected>
+                  Selecione uma categoria
+                </option>
+                <option class="form-contact__option" value="Imprensa">
+                  Imprensa
+                </option>
+                <option class="form-contact__option" value="Publicidade">
+                  Publicidade
+                </option>
+                <option class="form-contact__option" value="Design">
+                  Design
+                </option>
+                <option class="form-contact__option" value="Programação">
+                  Programação
+                </option>
+              </select>
+              <svg
+                class="form-contact__select-arrow"
+                width="16"
+                height="10"
+                viewBox="0 0 16 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 2L8 8L14 2"
+                  stroke="#FF8585"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </fieldset>
+          <div class="form-contact__main-info">
+            <fieldset class="form-contact__container-input">
+              <label class="form-contact__label" for="name">Nome</label>
+              <input
+                id="name"
+                class="form-contact__input name"
+                type="text" 
+                name="name"
+                required
+                minlength="4"
+                maxlength="40"
+              />
+            </fieldset>
+            <fieldset class="form-contact__container-input">
+              <label class="form-contact__label" for="enterprise"
+                >Empresa</label
+              >
+              <input
+                id="enterprise"
+                class="form-contact__input enterprise"
+                type="text"
+                name="enterprise"
+                required
+                minlength="4"
+                maxlength="30"
+              />
+            </fieldset>
+            <fieldset class="form-contact__container-input">
+              <label class="form-contact__label" for="email">E-mail</label>
+              <input
+                id="email"
+                class="form-contact__input email"
+                type="email"
+                name="e-mail"
+                required
+                minlength="4"
+                maxlength="30"
+              />
+            </fieldset>
+            <fieldset class="form-contact__container-input">
+              <label class="form-contact__label" for="phone">Telefone</label>
+              <input
+                id="phone"
+                type="text"
+                name="phone"
+                class="form-contact__input phone"
+                required
+                minlength="4"
+                maxlength="20"
+              />
+            </fieldset>
+          </div>
+          <fieldset class="form-contact__message">
+            <label class="form-contact__message-label" for="message"
+              >Mensagem</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              class="form-contact__message-area"
+              required
+              cols="30"
+              rows="5"
+              placeholder="Digite aqui..."
+            ></textarea>
+          </fieldset>
+          <div class="form-contact__send-form">
+            <div class="form-contact__human-verification">
+              <label for="human-verification"> Não sou um robô </label>
+              <input
+                required
+                id="human-verification"
+                class="form-contact__checkbox"
+                name="human-verification"
+                type="checkbox"
+              />
+            </div>
+            <button class="form-contact__send-button" type="submit">
+              Enviar
+              <img
+                class="form-contact__send-button-image"
+                src="public/assets/images/icon-send-button.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </form>
+      </section>
+      <nav class="side-menu">
+        <ul class="side-menu__socials">
+          <li>
+            <a href="#" target="_blank">
+              <img
+                class="side-menu__socials-icons"
+                src="public/assets/images/icon-instagram.svg"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img
+                class="side-menu__socials-icons"
+                src="public/assets/images/icon-youtube.svg"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img
+                class="side-menu__socials-icons"
+                src="public/assets/images/icon-twitter.svg"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img
+                class="side-menu__socials-icons"
+                src="public/assets/images/icon-facebook.svg"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img
+                class="side-menu__socials-icons"
+                src="public/assets/images/icon-snapchat.svg"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img
+                class="side-menu__socials-icons"
+                src="public/assets/images/icon-tiktok.svg"
+                alt=""
+              />
+            </a>
+          </li>
+        </ul>
+        <ul class="side-menu__navigation side-menu__main-menu">
+          <li>
+            <a class="side-menu__navigation-link" href="#" target="_blank"
+              >Sobre</a
+            >
+          </li>
+          <li>
+            <a class="side-menu__navigation-link" href="#" target="_blank"
+              >Novidades</a
+            >
+          </li>
+          <li>
+            <a class="side-menu__navigation-link" href="#" target="_blank"
+              >Agenda</a
+            >
+          </li>
+          <li>
+            <a class="side-menu__navigation-link" href="#" target="_blank"
+              >Galeria</a
+            >
+          </li>
+          <li>
+            <a class="side-menu__navigation-link" href="#" target="_blank"
+              >Contato</a
+            >
+          </li>
+          <ul class="side-menu__navigation side-menu__submenu">
+            <li>
+              <a class="side-menu__navigation-link" href="#" target="_blank"
+                >Imprensa</a
+              >
+            </li>
+            <li>
+              <a class="side-menu__navigation-link" href="#" target="_blank"
+                >Fã-Clubes</a
+              >
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </main>
+    <footer class="footer-info-socials">
+      <p class="footer-info-socials__copyright">
+        2023 &copy ARTISTA. Todos os direitos reservados.
+      </p>
+      <ul class="footer-info-socials__socials">
+        <li>
+          <a href="#" target="_blank">
+            <img
+              class="footer-info-socials__socials-links"
+              src="public/assets/images/icon-instagram.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img
+              class="footer-info-socials__socials-links"
+              src="public/assets/images/icon-youtube.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img
+              class="footer-info-socials__socials-links"
+              src="public/assets/images/icon-twitter.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img
+              class="footer-info-socials__socials-links"
+              src="public/assets/images/icon-facebook.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img
+              class="footer-info-socials__socials-links"
+              src="public/assets/images/icon-snapchat.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img
+              class="footer-info-socials__socials-links"
+              src="public/assets/images/icon-tiktok.svg"
+              alt=""
+            />
+          </a>
+        </li>
+      </ul>
+    </footer>
+    <script src="src/script/script.js"></script>
+    <script src="src/script/inputFocus.js"></script>
   </body>
 </html>

@@ -3,37 +3,345 @@
   src: url("../assets/fonts/Poppins-Italic.woff");
 }
 @font-face {
-  font-family: PoppinsMedium;
-  src: url("../assets/fonts/Poppins-Medium.woff");
-}
-@font-face {
   font-family: PoppinsThin;
   src: url("../assets/fonts/Poppins-Thin.woff");
 }
 @font-face {
-  src: url("../assets/fonts/Poppins-Bold.woff");
+  font-family: PoppinsLight;
+  src: url("../assets/fonts/Poppins-Light.woff");
+}
+@font-face {
+  font-family: PoppinsMedium;
+  src: url("../assets/fonts/Poppins-Medium.woff");
+}
+@font-face {
   font-family: PoppinsBold;
+  src: url("../assets/fonts/Poppins-Bold.woff");
+}
+@font-face {
+  font-family: PoppinsExtraBold;
+  src: url("../assets/fonts/Poppins-ExtraBold.woff");
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: PoppinsMedium;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  user-select: none;
 }
 body {
+  min-height: 100vh;
   display: grid;
 }
-#containerImageClip {
+.header-contact {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 0rem 0rem 4rem;
+  position: fixed;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: absolute;
+  color: #ff8585;
+  font-family: PoppinsExtraBold;
+  font-size: 1.5rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.5fr;
+}
+.aside-contact {
+  display: grid;
   position: relative;
-  mix-blend-mode: difference;
+  font-family: PoppinsLight;
+  gap: 3rem;
+  justify-content: center;
+  padding-bottom: 3rem;
 }
-#containerImageClip #background {
+.aside-contact__aside-images {
+  display: grid;
+}
+.aside-contact__image-main {
+  z-index: 1;
+}
+.aside-contact__image-contact {
+  position: absolute;
+  transform: translate(-20%, 43%);
+}
+.aside-contact__one {
+  z-index: 2;
+}
+.aside-contact__two {
+  z-index: 0;
+}
+.aside-contact__contact-info {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  height: 3.8rem;
+  border-left: 2px solid #ff8585;
+  padding-left: 1.5rem;
+}
+.aside-contact__professional {
+  letter-spacing: 0.4rem;
+  font-weight: 700;
+  color: $text-gray;
+  text-transform: uppercase;
+}
+.aside-contact__info {
+  display: flex;
+  gap: 0rem 3rem;
+}
+.aside-contact__telephone {
+  font-family: PoppinsBold;
+  color: #666;
+}
+.aside-contact__telephone,
+.aside-contact__email {
+  display: flex;
+  align-items: center;
+  gap: 0rem 0.7rem;
+}
+.side-menu {
+  display: flex;
+  text-align: end;
+  flex-direction: column;
+  align-items: end;
+  padding: 1.5rem 3rem 0rem 0rem;
+  gap: 5rem;
+}
+.side-menu__socials {
+  display: flex;
+  gap: 0.5rem;
+  list-style-type: none;
+}
+.side-menu__socials-icons {
+  filter: invert(47%) sepia(32%) saturate(397%) hue-rotate(331deg) brightness(121%) contrast(117%);
+}
+.side-menu__socials-icons:hover {
+  filter: invert(47%) sepia(32%) saturate(4497%) hue-rotate(331deg) brightness(101%) contrast(117%);
+}
+.side-menu__navigation {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 0.3rem;
+}
+.side-menu__navigation-link {
+  text-decoration: none;
+  color: #000;
+  font-family: PoppinsLight;
+}
+.side-menu__submenu {
   position: relative;
-  mix-blend-mode: normal;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
 }
-#containerImageClip #backClip {
-  z-index: 5;
+.side-menu__submenu::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1px;
+  background: #ff8585;
+  top: -7px;
+  right: 0;
 }
-footer {
-  background-color: #808080;
+.section-contact {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.section-contact .form-contact {
+  display: grid;
+  width: 100%;
+  height: 60%;
+}
+.section-contact .form-contact .form-contact__select-field {
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.section-contact .form-contact .form-contact__select-label {
+  font-family: PoppinsLight;
+  font-size: 1.1rem;
+}
+.section-contact .form-contact__select-container {
+  position: relative;
+  width: 90%;
+  font-family: PoppinsLight;
+}
+.section-contact .form-contact__select-arrow {
+  position: absolute;
+  right: 5%;
+  top: 35%;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+}
+.section-contact .form-contact__select:focus,
+.section-contact .form-contact__select:hover {
+  outline: none;
+  border-color: #ff4f4f;
+}
+.section-contact .form-contact__select {
+  -webkit-appearance: none;
+  height: 3.5rem;
+  width: 100%;
+  color: #000;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  padding-left: 1.2rem;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+}
+.section-contact .form-contact__option {
+  color: #000;
+}
+.section-contact .form-contact__option[value=""][disabled] {
+  display: none;
+}
+.section-contact .form-contact .form-contact__container-input {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  border: none;
+}
+.section-contact .form-contact .form-contact__input {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 1rem 0rem 0rem 0rem;
+  outline: none;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-family: PoppinsMedium;
+}
+.section-contact .form-contact .form-contact__input:focus,
+.section-contact .form-contact .form-contact__input:hover {
+  border-bottom: 1.5px solid #ff4f4f;
+  transition: all 150ms ease;
+}
+.section-contact .form-contact .form-contact__label {
+  color: #000;
+  position: absolute;
+  font-family: PoppinsLight;
+  pointer-events: none;
+  font-size: 1.1rem;
+  transition: 0.2s ease all;
+}
+.section-contact .form-contact .form-contact__label--active {
+  bottom: 25px;
+  transition: 0.2s ease all;
+}
+.section-contact .form-contact .form-contact__label:hover {
+  cursor: text;
+}
+.section-contact .form-contact .form-contact__message {
+  display: grid;
+  gap: 0.3rem;
+  border: none;
+  margin-top: 2.5rem;
+}
+.section-contact .form-contact .form-contact__message-label {
+  font-family: PoppinsLight;
+  font-size: 1.1rem;
+}
+.section-contact .form-contact .form-contact__message-area {
+  width: 90%;
+  font-family: PoppinsMedium;
+  resize: none;
+  height: 7.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid #c4c4c4;
+}
+.section-contact .form-contact .form-contact__message-area:focus,
+.section-contact .form-contact .form-contact__message-area:hover {
+  border: 1px solid #ff4f4f;
+  transition: all 150ms ease;
+}
+.section-contact .form-contact .form-contact__message-area::placeholder {
+  padding: 1rem;
+  font-family: PoppinsLight;
+}
+.section-contact .form-contact__send-form {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 2rem;
+}
+.section-contact .form-contact .form-contact__send-button {
+  width: 12rem;
+  border-radius: 0.3rem;
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  font-family: PoppinsLight;
+  border: none;
+  font-size: 1rem;
+  background-color: #ff8585;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+.section-contact .form-contact .form-contact__send-button-image {
+  width: 1rem;
+  height: 1rem;
+  transform: translateX(3rem);
+}
+.section-contact .form-contact .form-contact__send-button:hover {
+  background-color: #ff4f4f;
+  transition: 0.2s ease all;
+}
+.section-contact .form-contact .form-contact__human-verification {
+  width: 12rem;
+  border-radius: 0.3rem;
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  font-family: PoppinsLight;
+  flex-direction: row-reverse;
+  background: #f5f5f5;
+  gap: 0rem 0.5rem;
+}
+.section-contact .form-contact .form-contact__checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #ff8585;
+}
+.footer-info-socials {
+  display: flex;
+  background-color: #000;
+  padding: 0rem 3rem;
+  min-height: 3.2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-info-socials__copyright {
+  font-family: PoppinsLight;
+  color: #bdbdbd;
+  font-size: 0.7rem;
+}
+.footer-info-socials__socials {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+.footer-info-socials__socials-links:hover {
+  filter: invert(39%) sepia(5%) saturate(27%) hue-rotate(13deg) brightness(97%) contrast(86%);
 }

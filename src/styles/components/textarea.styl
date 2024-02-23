@@ -1,0 +1,29 @@
+.form-contact
+    &__message
+        display: grid
+        gap: .3rem
+        border none
+        margin-top: 2.5rem
+    
+    &__message-label
+        font-family: PoppinsLight
+        font-size: 1.1rem
+
+    &__message-area
+        width: 90%
+        font-family: PoppinsMedium
+        resize: none
+        height: 7.5rem
+        font-size: 1.1rem
+        font-weight: 500
+        outline: none
+        // padding: 1rem
+        border: 1px solid $Cloud
+
+        &:focus, &:hover
+            border: 1px solid $LightRed
+            transition: all 150ms ease
+        
+        &::placeholder
+            padding: 1rem
+            font-family: PoppinsLight

@@ -1,0 +1,37 @@
+.form-contact
+
+    &__container-input
+        display: flex
+        flex-direction: column-reverse
+        position: relative
+        border: none
+
+    &__input     
+        width: 90%
+        border: none
+        border-bottom: 1px solid $Cloud
+        padding: 1rem 0rem 0rem 0rem
+        outline: none;
+        font-size: 1.2rem
+        margin-top: 1rem
+        font-weight: 500
+        font-family: PoppinsMedium
+
+        &:focus, &:hover
+            border-bottom: 1.5px solid $LightRed
+            transition: all 150ms ease
+
+    &__label
+        color: $Black
+        position absolute
+        font-family: PoppinsLight
+        pointer-events: none;
+        font-size: 1.1rem
+        transition: 0.2s ease all;
+        
+        &--active
+            bottom: 25px
+            transition: 0.2s ease all;
+
+        &:hover 
+            cursor: text
