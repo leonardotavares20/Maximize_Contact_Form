@@ -1,54 +1,27 @@
-class InputValidator {
-  constructor(selectorId, errorMessage, minLength = 0) {
+class BaseValidate {
+  constructor(selectorId, errorMessage, minLength = 0, inputEmpty) {
     this.inputElement = document.getElementById(selectorId);
-    this.inputElement.addEventListener("input", this.inputIsValid.bind(this));
     this.errorMessage = errorMessage;
     this.minLength = minLength;
+    this.inputEmpty = inputEmpty;
+    this.spanError = this.inputElement.nextElementSibling;
   }
 
-  inputIsValid() {
-    const spanError = this.inputElement.nextElementSibling;
-    setTimeout(() => {
-      if (this.inputElement.value.trim().length < this.minLength) {
-        spanError.textContent = this.errorMessage;
-      } else {
-        spanError.textContent = "";
-      }
-    }, 1000);
-  }
-}
-class SelectValidator {
-  constructor() {
-    this.inputElement = document.getElementById("contactFor");
-    this.inputElement.addEventListener("change", this.selectIsValid.bind(this));
+  displayErrorMessage() {
+    this.spanError.textContent = this.errorMessage;
   }
 
-  selectIsValid() {
-    const spanError = this.inputElement.nextElementSibling;
-    if (this.inputElement.selectedIndex !== 0) {
-      spanError.textContent = "";
-    }
-  }
-}
-
-class EmailValidator extends InputValidator {
-  constructor(selectorId) {
-    super(selectorId, "Por favor, insira um endereço de e-mail válido.");
+  displayInputEmpty() {
+    this.spanError.textContent = this.inputEmpty;
   }
 
-  inputIsValid() {
-    setTimeout(() => {
-      const spanError = this.inputElement.nextElementSibling;
-      const emailValue = this.inputElement.value.trim();
+  displayValidInput() {
+    this.spanError.textContent = "";
+  }
 
-      if (emailValue === "") {
-        spanError.textContent = "O campo de e-mail não pode ficar em branco.";
-      } else if (!this.isValidEmail(emailValue)) {
-        spanError.textContent = this.errorMessage;
-      } else {
-        spanError.textContent = "";
-      }
-    }, 1000);
+  isValidPhone(phone) {
+    const phoneRegex = /^\d+$/;
+    return phoneRegex.test(phone);
   }
 
   isValidEmail(email) {
@@ -56,48 +29,134 @@ class EmailValidator extends InputValidator {
     return emailRegex.test(email);
   }
 }
-class CheckHumanValidator {
-  constructor() {
-    this.inputElement = document.getElementById("human-verification");
-    this.inputElement.addEventListener(
-      "change",
-      this.checkHumanIsValid.bind(this)
-    );
+
+class InputValidator extends BaseValidate {
+  constructor(selectorId, errorMessage, minLength = 0, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
+    this.inputElement.addEventListener("input", this.inputIsValid.bind(this));
   }
 
-  checkHumanIsValid() {
-    const spanError = this.inputElement.nextElementSibling;
+  inputIsValid() {
+    setTimeout(() => {
+      if (this.inputElement.value.trim().length < this.minLength) {
+        this.displayErrorMessage();
+      } else {
+        this.displayValidInput();
+      }
 
-    if (this.inputElement.checked) {
-      console.log("Checking");
-      spanError.textContent = "";
+      if (this.inputElement.value === "") {
+        this.displayInputEmpty();
+      }
+    }, 1000);
+  }
+}
+
+class SelectValidator extends BaseValidate {
+  constructor(selectorId) {
+    super(selectorId, "", 0, "");
+    this.inputElement.addEventListener("change", this.inputIsValid.bind(this));
+  }
+
+  inputIsValid() {
+    if (this.inputElement.selectedIndex !== 0) {
+      this.displayValidInput();
     }
+  }
+}
+
+class CheckHumanValidator extends BaseValidate {
+  constructor(selectorId) {
+    super(selectorId, "", 0, "");
+    this.inputElement.addEventListener("change", this.inputIsValid.bind(this));
+  }
+
+  inputIsValid() {
+    if (this.inputElement.checked) {
+      this.displayValidInput();
+    }
+  }
+}
+
+class NameValidator extends InputValidator {
+  constructor(selectorId) {
+    super(
+      selectorId,
+      "Por favor, digite mais de 4 catacteres",
+      4,
+      "O campo de nome não pode ficar em branco."
+    );
+  }
+}
+
+class EnterpriseValidator extends InputValidator {
+  constructor(selectorId) {
+    super(
+      selectorId,
+      "Por favor, digite mais de 6 catacteres",
+      6,
+      "O campo de empresa não pode ficar em branco."
+    );
+  }
+}
+
+class MessageValidator extends InputValidator {
+  constructor(selectorId) {
+    super(
+      selectorId,
+      "Por favor, digite mais de 10 catacteres",
+      10,
+      "O campo de mensagem não pode ficar em branco."
+    );
+  }
+}
+
+class EmailValidator extends InputValidator {
+  constructor(selectorId) {
+    super(
+      selectorId,
+      "Por favor, insira um endereço de e-mail válido.",
+      0,
+      "O campo de e-mail não pode ficar em branco."
+    );
+    this.inputElement.addEventListener("input", this.inputIsValid.bind(this));
+  }
+
+  inputIsValid() {
+    setTimeout(() => {
+      const emailValue = this.inputElement.value.trim();
+      if (!this.isValidEmail(emailValue)) {
+        this.displayErrorMessage();
+      } else if (emailValue === "") {
+        this.displayInputEmpty();
+      } else {
+        this.displayValidInput();
+      }
+    }, 1000);
   }
 }
 
 class PhoneValidator extends InputValidator {
   constructor(selectorId) {
-    super(selectorId, "Por favor, insira somente números.");
+    super(
+      selectorId,
+      "Por favor, insira somente números.",
+      10,
+      "O campo de telefone não pode ficar em branco."
+    );
   }
 
   inputIsValid() {
     setTimeout(() => {
-      const spanError = this.inputElement.nextElementSibling;
       const phoneValue = this.inputElement.value.trim();
 
       if (phoneValue === "") {
-        spanError.textContent = "O campo de telefone não pode ficar em branco.";
-      } else if (!this.isValidInput(phoneValue)) {
-        spanError.textContent = this.errorMessage;
+        this.displayInputEmpty();
+      } else if (!this.isValidPhone(phoneValue)) {
+        this.displayErrorMessage();
       } else {
-        spanError.textContent = "";
+        this.displayValidInput();
       }
     }, 1000);
-  }
-
-  isValidInput(phone) {
-    const phoneRegex = /^\d+$/;
-    return phoneRegex.test(phone);
   }
 }
 
@@ -161,23 +220,11 @@ class FormValidator {
   };
 }
 
-const selectValid = new SelectValidator();
-const nameValid = new InputValidator(
-  "name",
-  "Por favor, digite mais de 4 catacteres",
-  4
-);
-const enterpriseValid = new InputValidator(
-  "enterprise",
-  "Por favor, digite mais de 5 catacteres",
-  5
-);
-const messageValidate = new InputValidator(
-  "message",
-  "Por favor, digite mais de 10 catacteres",
-  10
-);
+const selectValid = new SelectValidator("contactFor");
+const nameValid = new NameValidator("name");
+const enterpriseValid = new EnterpriseValidator("enterprise");
+const messageValidate = new MessageValidator("message");
 const emailValid = new EmailValidator("email");
 const phoneValidate = new PhoneValidator("phone");
+const checkHumanValidate = new CheckHumanValidator("human-verification");
 const formValidate = new FormValidator(".form-contact", ".validate-input");
-const checkHumanValidate = new CheckHumanValidator();
