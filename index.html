@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
+    <link
+      rel="shortcut icon"
+      href="public/assets/icon/icon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <header class="header-contact">
@@ -65,10 +70,9 @@
             >
             <div class="form-contact__select-container">
               <select
-                class="form-contact__select"
-                name="contactFor"
                 id="contactFor"
-                required
+                class="form-contact__select validate-input"
+                name="contactFor"
               >
                 <option class="form-contact__option" value="" disabled selected>
                   Selecione uma categoria
@@ -86,6 +90,7 @@
                   Programação
                 </option>
               </select>
+              <span id="contactForInvalid" class="error"></span>
               <svg
                 class="form-contact__select-arrow"
                 width="16"
@@ -109,13 +114,13 @@
               <label class="form-contact__label" for="name">Nome</label>
               <input
                 id="name"
-                class="form-contact__input name"
-                type="text" 
+                class="form-contact__input validate-input"
+                type="text"
                 name="name"
-                required
                 minlength="4"
                 maxlength="40"
               />
+              <span id="nameInvalid" class="error"></span>
             </fieldset>
             <fieldset class="form-contact__container-input">
               <label class="form-contact__label" for="enterprise"
@@ -123,37 +128,37 @@
               >
               <input
                 id="enterprise"
-                class="form-contact__input enterprise"
+                class="form-contact__input validate-input"
                 type="text"
                 name="enterprise"
-                required
                 minlength="4"
                 maxlength="30"
               />
+              <span id="enterpriseInvalid" class="error"></span>
             </fieldset>
             <fieldset class="form-contact__container-input">
               <label class="form-contact__label" for="email">E-mail</label>
               <input
                 id="email"
-                class="form-contact__input email"
+                class="form-contact__input validate-input"
                 type="email"
-                name="e-mail"
-                required
+                name="email"
                 minlength="4"
                 maxlength="30"
               />
+              <span id="emailInvalid" class="error"></span>
             </fieldset>
             <fieldset class="form-contact__container-input">
               <label class="form-contact__label" for="phone">Telefone</label>
               <input
                 id="phone"
+                class="form-contact__input validate-input"
                 type="text"
                 name="phone"
-                class="form-contact__input phone"
-                required
                 minlength="4"
                 maxlength="20"
               />
+              <span id="phoneInvalid" class="error"></span>
             </fieldset>
           </div>
           <fieldset class="form-contact__message">
@@ -163,23 +168,23 @@
             <textarea
               id="message"
               name="message"
-              class="form-contact__message-area"
-              required
+              class="form-contact__message-area validate-input"
               cols="30"
               rows="5"
               placeholder="Digite aqui..."
             ></textarea>
+            <span id="messageInvalid" class="error"></span>
           </fieldset>
           <div class="form-contact__send-form">
             <div class="form-contact__human-verification">
               <label for="human-verification"> Não sou um robô </label>
               <input
-                required
                 id="human-verification"
-                class="form-contact__checkbox"
+                class="form-contact__checkbox validate-input"
                 name="human-verification"
                 type="checkbox"
               />
+              <span id="checkboxInvalid" class="error"></span>
             </div>
             <button class="form-contact__send-button" type="submit">
               Enviar
@@ -351,7 +356,7 @@
         </li>
       </ul>
     </footer>
-    <script src="src/script/script.js"></script>
+    <script src="src/script/formValidation.js"></script>
     <script src="src/script/inputFocus.js"></script>
   </body>
 </html>
