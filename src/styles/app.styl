@@ -55,8 +55,12 @@ $SubmenuFontSize = 0.9rem
 body 
    height: 100vh;
    display: grid
-   grid-template-rows: 1fr 1fr
    gap: 5rem
+   overflow-x: hidden 
+
+   @media screen and (max-width: 1550px)
+          gap: 1rem
+
   
 @import "./layout/header"
 @import "./layout/main"

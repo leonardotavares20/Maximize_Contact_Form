@@ -5,19 +5,40 @@
     font-family: PoppinsLight
     gap: 5rem
     justify-content: center
+    width: 100%
+
+    @media screen and (max-width: 1150px)
+        gap: 1rem
 
     &__aside-images 
         display grid
 
     &__image-main
         z-index 1
-        width 75% 
+        width 350px 
+
+        @media screen and (max-width: 1250px)
+            width: 80%
 
     &__image-contact
         position: absolute;
         width: 750px
-        transform: translate(-21%, 42%)
+        transform: translate(-20%, 42%)
 
+        @media screen and (max-width: 1550px)
+            width: 80%
+            left: 8.5%
+            top: 20%
+            transform: translate(0%, 0%)
+
+        @media screen and (max-width: 1200px)
+            top: 30%
+            left: 7%
+        @media screen and (max-width: 1024px)
+            width: 90%
+            left: 3%
+
+        
     &__one
         z-index: 2
 
@@ -37,7 +58,7 @@
     &__professional
             letter-spacing: .4rem
             font-weight: 700
-            color: $text-gray
+            color: $IronsideGrey
             text-transform: uppercase
 
     &__info

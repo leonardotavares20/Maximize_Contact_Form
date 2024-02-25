@@ -25,7 +25,7 @@ class BaseValidate {
   }
 
   isValidEmail(email) {
-    const emailRegex = /\S+@\S+\.\S+/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 }
@@ -50,10 +50,9 @@ class InputValidator extends BaseValidate {
     }, 1000);
   }
 }
-
 class SelectValidator extends BaseValidate {
-  constructor(selectorId) {
-    super(selectorId, "", 0, "");
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
     this.inputElement.addEventListener("change", this.inputIsValid.bind(this));
   }
 
@@ -64,61 +63,20 @@ class SelectValidator extends BaseValidate {
   }
 }
 
-class CheckHumanValidator extends BaseValidate {
-  constructor(selectorId) {
-    super(selectorId, "", 0, "");
-    this.inputElement.addEventListener("change", this.inputIsValid.bind(this));
-  }
-
-  inputIsValid() {
-    if (this.inputElement.checked) {
-      this.displayValidInput();
-    }
-  }
-}
-
 class NameValidator extends InputValidator {
-  constructor(selectorId) {
-    super(
-      selectorId,
-      "Por favor, digite mais de 4 catacteres",
-      4,
-      "O campo de nome não pode ficar em branco."
-    );
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
   }
 }
-
 class EnterpriseValidator extends InputValidator {
-  constructor(selectorId) {
-    super(
-      selectorId,
-      "Por favor, digite mais de 6 catacteres",
-      6,
-      "O campo de empresa não pode ficar em branco."
-    );
-  }
-}
-
-class MessageValidator extends InputValidator {
-  constructor(selectorId) {
-    super(
-      selectorId,
-      "Por favor, digite mais de 10 catacteres",
-      10,
-      "O campo de mensagem não pode ficar em branco."
-    );
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
   }
 }
 
 class EmailValidator extends InputValidator {
-  constructor(selectorId) {
-    super(
-      selectorId,
-      "Por favor, insira um endereço de e-mail válido.",
-      0,
-      "O campo de e-mail não pode ficar em branco."
-    );
-    this.inputElement.addEventListener("input", this.inputIsValid.bind(this));
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
   }
 
   inputIsValid() {
@@ -126,23 +84,19 @@ class EmailValidator extends InputValidator {
       const emailValue = this.inputElement.value.trim();
       if (!this.isValidEmail(emailValue)) {
         this.displayErrorMessage();
-      } else if (emailValue === "") {
-        this.displayInputEmpty();
       } else {
         this.displayValidInput();
+      }
+      if (this.inputElement.value === "") {
+        this.displayInputEmpty();
       }
     }, 1000);
   }
 }
 
 class PhoneValidator extends InputValidator {
-  constructor(selectorId) {
-    super(
-      selectorId,
-      "Por favor, insira somente números.",
-      10,
-      "O campo de telefone não pode ficar em branco."
-    );
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
   }
 
   inputIsValid() {
@@ -157,6 +111,25 @@ class PhoneValidator extends InputValidator {
         this.displayValidInput();
       }
     }, 1000);
+  }
+}
+
+class MessageValidator extends InputValidator {
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
+  }
+}
+
+class CheckHumanValidator extends BaseValidate {
+  constructor(selectorId, errorMessage, minLength, inputEmpty) {
+    super(selectorId, errorMessage, minLength, inputEmpty);
+    this.inputElement.addEventListener("change", this.inputIsValid.bind(this));
+  }
+
+  inputIsValid() {
+    if (this.inputElement.checked) {
+      this.displayValidInput();
+    }
   }
 }
 
@@ -220,11 +193,43 @@ class FormValidator {
   };
 }
 
-const selectValid = new SelectValidator("contactFor");
-const nameValid = new NameValidator("name");
-const enterpriseValid = new EnterpriseValidator("enterprise");
-const messageValidate = new MessageValidator("message");
-const emailValid = new EmailValidator("email");
-const phoneValidate = new PhoneValidator("phone");
-const checkHumanValidate = new CheckHumanValidator("human-verification");
+//Input validation
+const selectValid = new SelectValidator("contactFor", "", 0, "");
+const nameValid = new NameValidator(
+  "name",
+  "Por favor, digite mais de 4 catacteres",
+  4,
+  "O campo de nome não pode ficar em branco."
+);
+const enterpriseValid = new EnterpriseValidator(
+  "enterprise",
+  "Por favor, digite mais de 6 catacteres",
+  6,
+  "O campo de empresa não pode ficar em branco."
+);
+const emailValid = new EmailValidator(
+  "email",
+  "Por favor, insira um endereço de e-mail válido.",
+  0,
+  "O campo de e-mail não pode ficar em branco."
+);
+const phoneValidate = new PhoneValidator(
+  "phone",
+  "Por favor, insira somente números.",
+  10,
+  "O campo de telefone não pode ficar em branco."
+);
+const messageValidate = new MessageValidator(
+  "message",
+  "Por favor, digite mais de 10 caracteres",
+  10,
+  "O campo de mensagem não pode ficar em branco."
+);
+const checkHumanValidate = new CheckHumanValidator(
+  "human-verification",
+  "",
+  0,
+  ""
+);
+//General validation form
 const formValidate = new FormValidator(".form-contact", ".validate-input");

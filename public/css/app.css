@@ -36,8 +36,13 @@
 body {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 1fr;
   gap: 5rem;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 1550px) {
+  body {
+    gap: 1rem;
+  }
 }
 .header-contact {
   display: flex;
@@ -45,15 +50,40 @@ body {
   padding: 1.5rem 0rem 0rem 4rem;
   position: fixed;
   font-weight: 900;
-  text-transform: uppercase;
+  text-transforrm: uppercase;
   position: absolute;
   color: #ff8585;
   font-family: PoppinsExtraBold;
   font-size: 1.5rem;
 }
+@media screen and (max-width: 1550px) {
+  .header-contact {
+    padding: 1.5rem 0rem 0rem 3rem;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .header-contact {
+    padding: 1.5rem 0rem 0rem 2rem;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .header-contact {
+    position: relative;
+  }
+}
 main {
   display: grid;
   grid-template-columns: 2fr 1fr 0.5fr;
+}
+@media screen and (max-width: 1550px) {
+  main {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+@media screen and (max-width: 1250px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 .aside-contact {
   display: grid;
@@ -61,18 +91,49 @@ main {
   font-family: PoppinsLight;
   gap: 5rem;
   justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 1150px) {
+  .aside-contact {
+    gap: 1rem;
+  }
 }
 .aside-contact__aside-images {
   display: grid;
 }
 .aside-contact__image-main {
   z-index: 1;
-  width: 75%;
+  width: 350px;
+}
+@media screen and (max-width: 1250px) {
+  .aside-contact__image-main {
+    width: 80%;
+  }
 }
 .aside-contact__image-contact {
   position: absolute;
   width: 750px;
-  transform: translate(-21%, 42%);
+  transform: translate(-20%, 42%);
+}
+@media screen and (max-width: 1550px) {
+  .aside-contact__image-contact {
+    width: 80%;
+    left: 8.5%;
+    top: 20%;
+    transform: translate(0%, 0%);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .aside-contact__image-contact {
+    top: 30%;
+    left: 7%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .aside-contact__image-contact {
+    width: 90%;
+    left: 3%;
+  }
 }
 .aside-contact__one {
   z-index: 2;
@@ -91,7 +152,7 @@ main {
 .aside-contact__professional {
   letter-spacing: 0.4rem;
   font-weight: 700;
-  color: $text-gray;
+  color: #666;
   text-transform: uppercase;
 }
 .aside-contact__info {
@@ -115,6 +176,12 @@ main {
   align-items: end;
   padding: 2rem 3rem 0rem 0rem;
   gap: 3rem;
+}
+@media screen and (max-width: 1550px) {
+  .side-menu {
+    transform: translateX(100%);
+    display: none;
+  }
 }
 .side-menu__socials {
   display: flex;
@@ -162,6 +229,27 @@ main {
   display: grid;
   width: 100%;
   height: 60%;
+  font-family: PoppinsLight;
+}
+@media screen and (max-width: 1150px) {
+  .section-contact .form-contact {
+    height: 90%;
+  }
+}
+.section-contact .form-contact__span-error {
+  color: #ff4f4f;
+  position: absolute;
+  top: 14%;
+  left: 15%;
+  pointer-events: none;
+}
+@media screen and (max-width: 1250px) {
+  .section-contact .form-contact__span-error {
+    font-size: 0.8rem;
+    top: 20%;
+    left: 40%;
+    width: 180px;
+  }
 }
 .section-contact .form-contact .form-contact__select-field {
   height: 100%;
@@ -213,6 +301,12 @@ main {
 .section-contact .form-contact__option[value=""][disabled] {
   display: none;
 }
+.section-contact .form-contact__span-error-select {
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  color: #ff4f4f;
+}
 .section-contact .form-contact .form-contact__main-info {
   margin-top: 1rem;
 }
@@ -258,6 +352,18 @@ main {
   gap: 0.3rem;
   border: none;
   margin-top: 2.5rem;
+  position: relative;
+}
+.section-contact .form-contact .form-contact__message__span-error-message {
+  position: absolute;
+  color: #ff4f4f;
+  bottom: -19%;
+}
+@media screen and (max-width: 1250px) {
+  .section-contact .form-contact .form-contact__message__span-error-message {
+    font-size: 0.8rem;
+    bottom: -10%;
+  }
 }
 .section-contact .form-contact .form-contact__message-label {
   font-family: PoppinsLight;
@@ -289,20 +395,34 @@ main {
   width: 90%;
   margin-top: 2rem;
 }
+@media screen and (max-width: 1250px) {
+  .section-contact .form-contact__send-form {
+    flex-direction: column;
+    gap: 2rem;
+    height: 120px;
+    width: 90%;
+  }
+}
 .section-contact .form-contact .form-contact__send-button {
   width: 12rem;
   border-radius: 0.3rem;
   display: flex;
+  border: none;
   font-weight: 500;
   align-items: center;
   justify-content: center;
   font-family: PoppinsLight;
   font-size: 1rem;
-  border: none;
   background-color: #ff8585;
   color: #fff;
   cursor: pointer;
+  height: 50px;
   transition: 0.2s ease all;
+}
+@media screen and (max-width: 1250px) {
+  .section-contact .form-contact .form-contact__send-button {
+    width: 100%;
+  }
 }
 .section-contact .form-contact .form-contact__send-button-image {
   width: 1rem;
@@ -317,6 +437,7 @@ main {
   width: 12rem;
   border-radius: 0.3rem;
   display: flex;
+  border: none;
   font-weight: 500;
   align-items: center;
   justify-content: center;
@@ -325,6 +446,23 @@ main {
   flex-direction: row-reverse;
   background: #f5f5f5;
   gap: 0rem 0.5rem;
+  height: 50px;
+  position: relative;
+}
+@media screen and (max-width: 1250px) {
+  .section-contact .form-contact .form-contact__human-verification {
+    width: 100%;
+  }
+}
+.section-contact .form-contact .form-contact__human-verification__span-error-human {
+  color: #ff4f4f;
+  position: absolute;
+  bottom: -100%;
+}
+@media screen and (max-width: 1250px) {
+  .section-contact .form-contact .form-contact__human-verification__span-error-human {
+    bottom: -50%;
+  }
 }
 .section-contact .form-contact .form-contact__checkbox {
   width: 1.2rem;

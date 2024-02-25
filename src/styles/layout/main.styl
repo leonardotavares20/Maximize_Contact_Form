@@ -2,6 +2,12 @@
 main 
     display: grid
     grid-template-columns: 2fr 1fr 0.5fr
+
+    @media screen and (max-width: 1550px)
+        grid-template-columns: 1.5fr 1fr
+        
+    @media screen and (max-width: 1250px)
+        grid-template-columns: 2fr 1fr
     
 @import "aside"
 @import "menu"

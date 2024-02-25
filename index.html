@@ -90,7 +90,10 @@
                   Programação
                 </option>
               </select>
-              <span id="contactForInvalid" class="form-contact__span-error"></span>
+              <span
+                id="contactForInvalid"
+                class="form-contact__span-error-select"
+              ></span>
               <svg
                 class="form-contact__select-arrow"
                 width="16"
@@ -134,7 +137,10 @@
                 minlength="4"
                 maxlength="30"
               />
-              <span id="enterpriseInvalid" class="form-contact__span-error"></span>
+              <span
+                id="enterpriseInvalid"
+                class="form-contact__span-error"
+              ></span>
             </fieldset>
             <fieldset class="form-contact__container-input">
               <label class="form-contact__label" for="email">E-mail</label>
@@ -173,10 +179,13 @@
               rows="5"
               placeholder="Digite aqui..."
             ></textarea>
-            <span id="messageInvalid" class="form-contact__span-error"></span>
+            <span
+              id="messageInvalid"
+              class="form-contact__message__span-error-message"
+            ></span>
           </fieldset>
           <div class="form-contact__send-form">
-            <div class="form-contact__human-verification">
+            <fieldset class="form-contact__human-verification">
               <label for="human-verification"> Não sou um robô </label>
               <input
                 id="human-verification"
@@ -184,14 +193,17 @@
                 name="human-verification"
                 type="checkbox"
               />
-              <span id="checkboxInvalid" class="form-contact__span-error"></span>
-            </div>
+              <span
+                id="checkboxInvalid"
+                class="form-contact__human-verification__span-error-human"
+              ></span>
+            </fieldset>
             <button class="form-contact__send-button" type="submit">
               Enviar
               <img
                 class="form-contact__send-button-image"
                 src="public/assets/images/icon-send-button.svg"
-                alt=""
+                alt="Enviar Formulário"
               />
             </button>
           </div>
@@ -204,7 +216,7 @@
               <img
                 class="side-menu__socials-icons"
                 src="public/assets/images/icon-instagram.svg"
-                alt=""
+                alt="Instagram"
               />
             </a>
           </li>
@@ -213,7 +225,7 @@
               <img
                 class="side-menu__socials-icons"
                 src="public/assets/images/icon-youtube.svg"
-                alt=""
+                alt="Youtube"
               />
             </a>
           </li>
@@ -222,7 +234,7 @@
               <img
                 class="side-menu__socials-icons"
                 src="public/assets/images/icon-twitter.svg"
-                alt=""
+                alt="Twitter"
               />
             </a>
           </li>
@@ -231,7 +243,7 @@
               <img
                 class="side-menu__socials-icons"
                 src="public/assets/images/icon-facebook.svg"
-                alt=""
+                alt="Facebook"
               />
             </a>
           </li>
@@ -240,7 +252,7 @@
               <img
                 class="side-menu__socials-icons"
                 src="public/assets/images/icon-snapchat.svg"
-                alt=""
+                alt="Snapchat"
               />
             </a>
           </li>
@@ -249,7 +261,7 @@
               <img
                 class="side-menu__socials-icons"
                 src="public/assets/images/icon-tiktok.svg"
-                alt=""
+                alt="TikTok"
               />
             </a>
           </li>
@@ -305,7 +317,7 @@
             <img
               class="footer-info-socials__socials-links"
               src="public/assets/images/icon-instagram.svg"
-              alt=""
+              alt="Instagram"
             />
           </a>
         </li>
@@ -314,7 +326,7 @@
             <img
               class="footer-info-socials__socials-links"
               src="public/assets/images/icon-youtube.svg"
-              alt=""
+              alt="Youtube"
             />
           </a>
         </li>
@@ -323,7 +335,7 @@
             <img
               class="footer-info-socials__socials-links"
               src="public/assets/images/icon-twitter.svg"
-              alt=""
+              alt="Twitter"
             />
           </a>
         </li>
@@ -332,7 +344,7 @@
             <img
               class="footer-info-socials__socials-links"
               src="public/assets/images/icon-facebook.svg"
-              alt=""
+              alt="Facebook"
             />
           </a>
         </li>
@@ -341,7 +353,7 @@
             <img
               class="footer-info-socials__socials-links"
               src="public/assets/images/icon-snapchat.svg"
-              alt=""
+              alt="Snapchat"
             />
           </a>
         </li>
@@ -350,7 +362,7 @@
             <img
               class="footer-info-socials__socials-links"
               src="public/assets/images/icon-tiktok.svg"
-              alt=""
+              alt="TikTok"
             />
           </a>
         </li>

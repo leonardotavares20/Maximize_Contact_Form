@@ -1,29 +1,42 @@
 .form-contact
     &__message
-        display: grid
-        gap: .3rem
+        display grid
+        gap .3rem
         border none
-        margin-top: 2.5rem
+        margin-top 2.5rem
+        position relative
+
+        &__span-error-message
+            position: absolute
+            color: $LightRed 
+            bottom: -19%
+
+            @media screen and (max-width: 1250px)
+                font-size: .8rem
+                bottom: -10%
+                
+            
     
     &__message-label
-        font-family: PoppinsLight
-        font-size: $StandardFontSizer
+        font-family PoppinsLight
+        font-size $StandardFontSizer
+
 
     &__message-area
-        width: 90%
-        font-family: PoppinsMedium
-        resize: none
-        height: 7.5rem
-        font-size: $StandardFontSizer
-        font-weight: 500
-        outline: none
-        // padding: 1rem
-        border: 1px solid $Cloud
+        width 90%
+        font-family PoppinsMedium
+        resize none
+        height 7.5rem
+        font-size $StandardFontSizer
+        font-weight 500
+        outline none
+        border 1px solid $Cloud
 
         &:focus, &:hover
-            border: 1px solid $LightRed
+            border 1px solid $LightRed
             transition: all 150ms ease
         
         &::placeholder
             padding: 1rem
             font-family: PoppinsLight
+

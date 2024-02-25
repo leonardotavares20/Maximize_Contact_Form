@@ -2,6 +2,8 @@
 
 ![Alt Text](./public/assets/images/thaynaog-captura.png)
 
+ThayOG is a responsive contact page with form validation.
+
 ## Commands to utilize the project with Docker
 
 To use this project with docker, you need to instal Docker and Git
@@ -17,6 +19,7 @@ To use this project with docker, you need to instal Docker and Git
 - To restart execution: 'docker start thayog-maximize'
 
 ## Dependencies
+
 - Stylus: 0.62.0
 - Node: v20.11.1
 - NPM: 10.2.4
@@ -30,6 +33,3 @@ If you plan to use this project in development mode, you will need to have Node.
 - Install dependencies using "npm install".
 - Compile the css using "stylus -w src/styles/app.styl --out public/css"
 - Open the index.html file or install the Live Server extension in your VSCode and run the project.
-
-
-
