@@ -4,19 +4,59 @@
   flex-direction: column
   align-items: end
   padding: 2rem 3rem 0rem 0rem
-  gap: 3rem
 
   @media screen and (max-width: 1550px)
-          transform: translateX(100%)
-          display: none
+    transform: translateX(200%)
+    display: none
+
+    &--open
+      transform: translateX(0%)
+      transition: .2s linear
+      display: block
+      position: fixed
+      z-index 10
+      background-color: $White
+      width: 50%
+      right: 0
+      top: 0
+      height: 100%
+      overflow: hidden
+      border-left: 1px solid $Geraldine
+
+    @media screen and (max-width: 650px)
+        &--open
+          width: 100%
+    
+  &__socials-close
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-left: 1rem
+    margin-bottom: 3.5rem
+
+  &__button-close-menu
+    display: flex
+    height: 3rem
+    align-items: center
+    justify-content: center
+    width: 3rem
+    cursor pointer
+    visibility: hidden
+
+    @media screen and (max-width: 1550px)
+      visibility: visible
 
   &__socials
     display: flex
     gap: 0.5rem
     list-style-type: none
+    justify-content: flex-end;
 
   &__socials-icons
     filter: invert(47%) sepia(32%) saturate(397%) hue-rotate(331deg) brightness(121%) contrast(117%);
+
+    @media screen and (max-width: 450px)
+            justify-content: flex-start
 
   &__socials-icons:hover
     filter: invert(47%) sepia(32%) saturate(4497%) hue-rotate(331deg) brightness(101%) contrast(117%);
@@ -45,3 +85,6 @@
     background: $Geraldine
     top: -7px
     right: 0
+
+  .material-symbols-outlined 
+    color: $Geraldine

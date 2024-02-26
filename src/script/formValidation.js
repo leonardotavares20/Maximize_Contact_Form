@@ -157,7 +157,6 @@ class EmptyInputValidator {
         this.inputElement.focus();
         return false;
       } else {
-        spanError.textContent = "Marque a caixa de verificação";
         return true;
       }
     }
@@ -182,13 +181,22 @@ class FormValidator {
   }
 
   formIsValid = (event) => {
+    event.preventDefault();
+    let dataUser = {};
     const isValid = Array.from(this.inputs).every((input) => {
       const inputIsValid = new EmptyInputValidator(input);
+      if (inputIsValid.validateInputs()) {
+        dataUser[input.name] = input.value;
+      }
       return inputIsValid.validateInputs();
     });
 
     if (!isValid) {
-      event.preventDefault();
+      return;
+    }
+
+    if (isValid) {
+      console.log(dataUser);
     }
   };
 }

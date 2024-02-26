@@ -6,27 +6,39 @@
     <title>Contato - ThayOG</title>
     <link rel="stylesheet" href="public/css/app.css" />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <link
       rel="shortcut icon"
       href="public/assets/icon/icon.ico"
       type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
   </head>
   <body>
     <header class="header-contact">
       <p>Artista</p>
+      <div class="header-contact__hamburger-menu">
+        <div class="header-contact__hamburger-bar"></div>
+        <div class="header-contact__hamburger-bar"></div>
+        <div class="header-contact__hamburger-bar"></div>
+      </div>
     </header>
     <main>
       <aside class="aside-contact">
         <div class="aside-contact__aside-images">
-          <img
-            class="aside-contact__image-main"
-            src="public/assets/images/contato-imagem.svg"
-            alt="Mulher com uma camisa amarela sorrindo, segurando alguns pincéis em sua mão esquerda, e uma aquarela cobrindo metade do seu rosto"
-          />
+          <picture class="aside-contact__image-main">
+            <source
+              class="aside-contact__image-main"
+              media="(max-width: 900px)"
+              srcset="public/assets/images/contato-imagem-mobile.png"
+            />
+            <img
+              class="aside-contact__image-main"
+              src="public/assets/images/contato-imagem.svg"
+              alt="Mulher com uma camisa amarela sorrindo, segurando alguns pincéis em sua mão esquerda, e uma aquarela cobrindo metade do seu rosto"
+            />
+          </picture>
           <img
             aria-hidden="true"
             class="aside-contact__image-contact aside-contact__one"
@@ -210,62 +222,67 @@
         </form>
       </section>
       <nav class="side-menu">
-        <ul class="side-menu__socials">
-          <li>
-            <a href="#" target="_blank">
-              <img
-                class="side-menu__socials-icons"
-                src="public/assets/images/icon-instagram.svg"
-                alt="Instagram"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <img
-                class="side-menu__socials-icons"
-                src="public/assets/images/icon-youtube.svg"
-                alt="Youtube"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <img
-                class="side-menu__socials-icons"
-                src="public/assets/images/icon-twitter.svg"
-                alt="Twitter"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <img
-                class="side-menu__socials-icons"
-                src="public/assets/images/icon-facebook.svg"
-                alt="Facebook"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <img
-                class="side-menu__socials-icons"
-                src="public/assets/images/icon-snapchat.svg"
-                alt="Snapchat"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <img
-                class="side-menu__socials-icons"
-                src="public/assets/images/icon-tiktok.svg"
-                alt="TikTok"
-              />
-            </a>
-          </li>
-        </ul>
+        <div class="side-menu__socials-close">
+          <div class="side-menu__button-close-menu">
+            <span class="material-symbols-outlined"> close </span>
+          </div>
+          <ul class="side-menu__socials">
+            <li>
+              <a href="#" target="_blank">
+                <img
+                  class="side-menu__socials-icons"
+                  src="public/assets/images/icon-instagram.svg"
+                  alt="Instagram"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img
+                  class="side-menu__socials-icons"
+                  src="public/assets/images/icon-youtube.svg"
+                  alt="Youtube"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img
+                  class="side-menu__socials-icons"
+                  src="public/assets/images/icon-twitter.svg"
+                  alt="Twitter"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img
+                  class="side-menu__socials-icons"
+                  src="public/assets/images/icon-facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img
+                  class="side-menu__socials-icons"
+                  src="public/assets/images/icon-snapchat.svg"
+                  alt="Snapchat"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img
+                  class="side-menu__socials-icons"
+                  src="public/assets/images/icon-tiktok.svg"
+                  alt="TikTok"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <ul class="side-menu__navigation side-menu__main-menu">
           <li>
             <a class="side-menu__navigation-link" href="#" target="_blank"
@@ -370,5 +387,6 @@
     </footer>
     <script src="src/script/formValidation.js"></script>
     <script src="src/script/inputFocus.js"></script>
+    <script src="src/script/burgerMenu.js"></script>
   </body>
 </html>

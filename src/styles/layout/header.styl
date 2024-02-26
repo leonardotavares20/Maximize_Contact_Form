@@ -1,22 +1,49 @@
 .header-contact
     display: flex
     align-items: flex-end
-    padding: 1.5rem 0rem 0rem 4rem
+    padding: 1.5rem 4rem
     position: fixed
+    justify-content: space-between
+    width: 100vw
   
     p
     font-weight: 900
     text-transforrm: uppercase
-    position: absolute
     color: $Geraldine
     font-family: PoppinsExtraBold
     font-size: $HeaderLogoSize
+    position: absolute
+
+    &__hamburger-menu
+        display: none
+        height: 100%
+        width: 30px
+        height: 30px
+        
+        @media screen and (max-width: 1550px)
+            display: block
+            cursor pointer
+
+    &__hamburger-bar
+        height: .3rem
+        width: 100%
+        margin: .2rem 0px
+        background: $Geraldine
 
     @media screen and (max-width: 1550px)
-        padding: 1.5rem 0rem 0rem 3rem
+        padding: 1.5rem 3rem
     
     @media screen and (max-width: 1350px)
-        padding: 1.5rem 0rem 0rem 2rem
+        padding: 1.5rem 2rem 
 
-     @media screen and (max-width: 1150px)
+    @media screen and (max-width: 1150px)
         position relative
+        padding: 1rem 2rem 
+        align-items: center
+        
+    @media screen and (max-width: 900px)
+        padding: 1.5rem  2rem
+
+
+
+  

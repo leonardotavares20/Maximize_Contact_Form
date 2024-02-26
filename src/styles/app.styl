@@ -15,8 +15,6 @@ $FooterFontSize = 0.7rem
 $HeaderLogoSize = 1.5rem
 $SubmenuFontSize = 0.9rem
 
-
-
 @font-face
   font-family PoppinsItalic
   src url(../assets/fonts/Poppins-Italic.woff)
@@ -53,15 +51,15 @@ $SubmenuFontSize = 0.9rem
   user-select: none
 
 body 
-   height: 100vh;
-   display: grid
-   gap: 5rem
-   overflow-x: hidden 
+  height: 100vh;
+  display: grid
+  gap: 3rem
+  overflow-x: hidden 
 
-   @media screen and (max-width: 1550px)
-          gap: 1rem
+  @media screen and (max-width: 1150px)
+      gap: 0rem
 
-  
+
 @import "./layout/header"
 @import "./layout/main"
 @import "./layout/footer"

@@ -14,8 +14,6 @@
             @media screen and (max-width: 1250px)
                 font-size: .8rem
                 bottom: -10%
-                
-            
     
     &__message-label
         font-family PoppinsLight
@@ -31,6 +29,10 @@
         font-weight 500
         outline none
         border 1px solid $Cloud
+
+        @media screen and (max-width 900px)
+            width: 80vw
+            border-radius: .5rem
 
         &:focus, &:hover
             border 1px solid $LightRed

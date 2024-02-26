@@ -10,6 +10,17 @@
     @media screen and (max-width: 1150px)
         gap: 1rem
 
+    @media screen and (max-width: 900px)
+        width 80vw
+        gap: 12rem
+        justify-content: start
+    
+    @media screen and (max-width: 620px)
+        gap: 8rem
+    
+    @media screen and (max-width: 550px)
+        gap: 6rem
+
     &__aside-images 
         display grid
 
@@ -17,8 +28,8 @@
         z-index 1
         width 350px 
 
-        @media screen and (max-width: 1250px)
-            width: 80%
+        @media screen and (max-width: 900px)
+            width: 80vw
 
     &__image-contact
         position: absolute;
@@ -32,12 +43,12 @@
             transform: translate(0%, 0%)
 
         @media screen and (max-width: 1200px)
-            top: 30%
+            top: 25%
             left: 7%
-        @media screen and (max-width: 1024px)
-            width: 90%
-            left: 3%
-
+        
+        @media screen and (max-width: 900px)
+            top: 37%
+            left: 0
         
     &__one
         z-index: 2
@@ -55,15 +66,35 @@
         border-left: 2px solid $Geraldine
         padding-left: 1.5rem
 
+        @media screen and (max-width: 900px)
+            display: flex
+            flex-direction: column
+            justify-content: start
+            height: 100%
+            gap: .3rem
+
+        @media screen and (max-width: 500px)
+            padding-left: 1rem
+
+
     &__professional
             letter-spacing: .4rem
             font-weight: 700
             color: $IronsideGrey
             text-transform: uppercase
 
+        @media screen and (max-width: 500px)
+            letter-spacing: .1rem
+            font-size: .8rem
+
     &__info
         display: flex
         gap: 0rem 3rem
+
+        @media screen and (max-width: 900px)
+            display: flex
+            flex-direction: column
+            gap: .3rem
 
     &__telephone
         font-family: PoppinsBold  
