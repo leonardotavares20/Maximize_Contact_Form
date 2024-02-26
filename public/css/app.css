@@ -433,6 +433,11 @@ main .section-contact .form-contact .form-contact__select {
     border-radius: 0.8rem;
   }
 }
+@media screen and (max-width: 900px) {
+  main .section-contact .form-contact .form-contact__select {
+    height: 2.5rem;
+  }
+}
 main .section-contact .form-contact .form-contact__option {
   color: #000;
 }
